@@ -1,0 +1,47 @@
+:root{
+    --blue:rgb(61,90,254);
+    --lightblue: rgb(33,150,243);
+    --blue-p: 70%;
+}
+body{
+    background-color:rgb(0, 0, 25);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.lists {
+    width: 100vw;
+
+}
+.ls:nth-child(3){
+    border-bottom: 3px solid whitesmoke;
+}
+.ls {
+    display: block;
+    border-top: 3px solid white;
+    padding: 20px 15px;
+    color: whitesmoke;
+    list-style: none;
+    font-size: xx-large;
+    position: relative;
+}
+.ls::after {
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--blue) var( --blue-p),
+        var(--lightblue)
+    );
+    content: "";
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    position: absolute;
+}
+.ls:hover::after {
+    width: 100%;
+    transition: all linear 700ms;
+}
